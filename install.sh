@@ -1,42 +1,56 @@
 #!/bin/bash
 
-RED='\033[0;31m'        # red
-GREEN='\033[0;32m'      # green
-YELLOW='\033[1;33m'     # yellow
-BLUE='\033[1;34m'       # blue
-NC='\033[0m'            # no color
+# Colors
+RED='\033[0;31m'        
+GREEN='\033[0;32m'      
+YELLOW='\033[1;33m'     
+BLUE='\033[1;34m'       
+NC='\033[0m'            
 
 printf "\n${BLUE}====> Installation starting...\n${NC}\n"
 
-printf "\n${BLUE}====> System update\n${NC}\n"
-sudo apt-get update
+# Check if Homebrew is installed, install it if not
+if ! command -v brew &> /dev/null; then
+    printf "${YELLOW}====> Homebrew not found. Installing Homebrew...${NC}\n"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Add brew to path for the current session (standard for Apple Silicon)
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-printf "\n${BLUE}====> Common deps installation starting...\n${NC}\n"
-sudo apt-get install -y \
+printf "\n${BLUE}====> Updating Homebrew\n${NC}\n"
+brew update
+
+printf "\n${BLUE}====> Installing Command Line Tools (Compiler/Make)\n${NC}\n"
+# This replaces build-essential
+if ! xcode-select -p &> /dev/null; then
+    xcode-select --install
+fi
+
+printf "\n${BLUE}====> Installing dependencies via Homebrew...\n${NC}\n"
+# Note: macOS already has zsh, vim, and ssh by default, 
+# but Homebrew versions are often newer.
+brew install \
 wget \
 git \
 vim \
 zsh \
 tmux \
-tilix \
 tree \
-openssh-server \
-openssh-client \
-build-essential \
-clang \
-clang-tools \
-clang-format \
 llvm \
-lldb
+cmake \
+clang-format
+
+# Tilix is Linux-only. iTerm2 is the standard power-user terminal for Mac.
+brew install --cask iterm2
 
 printf "\n${BLUE}====> vim plugin support installation starting...\n${NC}\n"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 printf "\n${BLUE}====> nodejs installation starting...\n${NC}\n"
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo npm i -g yarn
+# On Mac, we don't need the nodesource setup script
+brew install node
+npm i -g yarn
 
 if [ $? -eq 0 ]
 then

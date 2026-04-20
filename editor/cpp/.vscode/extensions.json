@@ -34,8 +34,6 @@
         "yzane.markdown-pdf",
         "shd101wyy.markdown-preview-enhanced",
         "DavidAnson.vscode-markdownlint",
-        "Ranch-Hand-Robotics.rde-ros-1",
-        "Ranch-Hand-Robotics.rde-pack",
         "matepek.vscode-catch2-test-adapter"
     ]
 }

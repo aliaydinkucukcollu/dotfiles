@@ -1,12 +1,12 @@
 {
     // ---- Window ----
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     // ---- Editor config ----
-    "editor.fontFamily": "Cascadia Code, 'Fira Code', Consolas, monospace",
+    // "editor.fontFamily": "Cascadia Code, 'Fira Code', Consolas, monospace",
     // "editor.fontFamily": "'JetBrains Mono', 'Fira Code', Consolas, monospace",
     "editor.fontLigatures": true,
     "editor.accessibilitySupport": "off",
-    "editor.fontSize": 20,
+    "editor.fontSize": 16,
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -46,12 +46,12 @@
     "workbench.tree.renderIndentGuides": "always",
     "workbench.list.smoothScrolling": true,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Dark Modern",
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#0099ff"
     },
     // ---- Terminal ----
-    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "Cascadia Code",
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.letterSpacing": 1,
