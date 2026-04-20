@@ -1,0 +1,109 @@
+{
+    // ---- Window ----
+    "window.zoomLevel": 1,
+    // ---- Editor config ----
+    "editor.fontFamily": "Cascadia Code, 'Fira Code', Consolas, monospace",
+    // "editor.fontFamily": "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+    "editor.fontLigatures": true,
+    "editor.accessibilitySupport": "off",
+    "editor.fontSize": 20,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.convertImportFormat": "explicit",
+        "source.unusedImports": "explicit"
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#747474"
+    },
+    // Controls if quick suggestions should show up while typing
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.quickSuggestionsDelay": 1,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.tabCompletion": "on",
+    "editor.suggest.localityBonus": true,
+    "editor.suggestSelection": "first",
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.parameterHints.enabled": true,
+    // ---- Minimap ----
+    "editor.minimap.scale": 2,
+    "editor.minimap.maxColumn": 180,
+    "editor.minimap.renderCharacters": true,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.size": "proportional",
+    "editor.minimap.autohide": "none",
+    "editor.minimap.showMarkSectionHeaders": true,
+    "editor.minimap.sectionHeaderFontSize": 30,
+    // ---- workbench config ----
+    "workbench.tree.indent": 14,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.list.smoothScrolling": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#0099ff"
+    },
+    // ---- Terminal ----
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontFamily": "Cascadia Code",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.letterSpacing": 1,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.gpuAcceleration": "auto",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash"
+        },
+        "zsh": {
+            "path": "/usr/bin/zsh"
+        }
+    },
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.scrollback": 100000,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.location": "right",
+    // "terminal.integrated.profiles.linux": {
+    //     "ROS2": {
+    //         "path": "/bin/bash",
+    //         "args": [
+    //             "-c",
+    //             "source /opt/ros/humble/setup.bash && exec bash"
+    //         ]
+    //     }
+    // },
+    "files.autoSave": "afterDelay",
+    "explorer.compactFolders": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+    ],
+    // ---- C/C++ ----
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.loggingLevel": "Warning",
+}
